@@ -83,12 +83,15 @@ void Cube::processCube() {
 	for (int i = 0; i < maxLayer; ++i) {
 		setLayer(i, HIGH);
 		for (int j = 0; j < maxPerLayer; ++j) {
-			setPos(j, leds[i][j]);
+			if (leds[i][j]) {
+				setPos(j, HIGH);
 
-			// just for experimenting
-			//for (int wait = 0; wait < 20000; ++wait) {}
+				// just for experimenting
+				//for (int wait = 0; wait < 20000; ++wait) {}
 
-			setPos(j, LOW);
+				setPos(j, LOW);
+			}
+			
 		}
 		setLayer(i, LOW);
 	}
