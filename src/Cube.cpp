@@ -79,7 +79,23 @@ byte Cube::getMaxPerLayer() {
 }
 
 void Cube::processCube() {
+	// set each pos on for a very short time
 	for (int i = 0; i < maxLayer; ++i) {
+		setLayer(i, HIGH);
+		for (int j = 0; j < maxPerLayer; ++j) {
+			setPos(j, leds[i][j]);
+
+			// just for experimenting
+			//for (int wait = 0; wait < 20000; ++wait) {}
+
+			setPos(j, LOW);
+		}
+		setLayer(i, LOW);
+	}
+
+	// old code, which leads to different brightness based on how many leds are ON at each layer
+	// set each layer on for a very short time
+	/*for (int i = 0; i < maxLayer; ++i) {
 		setLayer(i, HIGH);
 
 		for (int j = 0; j < maxPerLayer; ++j) {
@@ -90,7 +106,7 @@ void Cube::processCube() {
 			setPos(j, LOW);
 		}
 		setLayer(i, LOW);
-	}
+	}*/
 }
 
 void Cube::setFromDWord(unsigned long dword) {

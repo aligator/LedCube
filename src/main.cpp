@@ -29,7 +29,7 @@
 //EQ: Edit-Modus beenden. im Ani-Edit-Mode wird nichts gespeichert!!!!
 
 void setup() {
-	//Serial.begin(9600);
+	Serial.begin(9600);
 	noInterrupts();
 
 	irSensor = A0;

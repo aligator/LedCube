@@ -26,7 +26,12 @@ public:
 	bool getLedState(int layer, int pos);
 
 private:
-	byte positions[9] = {5, 6, 7, 8, 9, 10, 11, 12, 13};
+	// byte positions[9] = {5, 6, 7,
+						//	8, 9, 10,
+						//	11, 12, 13};
+	byte positions[9] = {11, 8, 5,
+						 12, 9, 6,
+						 13, 10, 7};
 	byte layers[3] = {2, 3, 4};
 	void processCube();
 	void setLayer(int layer, int state);
