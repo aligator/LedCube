@@ -1,5 +1,5 @@
 // Do not remove the include below
-#include "LedCube.h"
+#include "main.h"
 #include "Arduino.h"
 
 //Erster Start:
